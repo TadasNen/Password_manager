@@ -1,4 +1,4 @@
-1. Password generation
+1. Password generation ========== DONE!
 2. Encryption
 3. Data saving into sql database
 4. Account to access your passwords with unique encryption key
