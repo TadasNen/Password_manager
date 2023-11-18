@@ -3,6 +3,7 @@ from sqlalchemy import Column, Integer, String, DateTime, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from password_generator import password_generation
+from encyption import *
 
 from sqlalchemy.util import deprecations
 deprecations.SILENCE_UBER_WARNING = True
@@ -88,5 +89,3 @@ def filter_sql():
             for el in filter_entry:
                 print(f"{el.id}. Association: {el.website}; Login details: {el.username}; Password {el.enc_password}")
             break
-
-filter_sql()
