@@ -49,3 +49,44 @@ def view_sql():
     view_data = session.query(Password_Manager).all()
     for el in view_data:
         print(f"{el.id}. Association: {el.website}; Login details: {el.username}; Password: {el.enc_password}")
+
+def delete_sql_entry():
+    while True:
+        try:
+            entry_id = int(input("Select password ID corresponding to which entry should be deleted: "))
+            delete_entry_id = session.query(Password_Manager).get(entry_id)
+            if delete_entry_id:
+                session.delete(delete_entry_id)
+                session.commit()
+                break
+            else:
+                print("\nEntry ID does not exist\n")
+        except ValueError:
+            print("\nID must be a digit\n")
+
+def filter_sql():
+    while True:
+        option_filter = input("Please select according to which column you want to filter:\n"
+                             "1. Entry ID\n"
+                             "2. Associated website\n"
+                             "3. Login details\n"
+                             "q - quit\n"
+                             "Your option: ")
+        if option_filter == "1":
+            collumn_filter = Password_Manager.id
+        elif option_filter == "2":
+            collumn_filter = Password_Manager.website
+        elif option_filter == "3":
+            collumn_filter = Password_Manager.username
+        elif option_filter == "q":
+            break
+        else:
+            print("\nPlease select valid option\n")
+        if option_filter == "1" or option_filter == "2" or option_filter == "3":
+            input_filter = input("Search for: ")
+            filter_entry = session.query(Password_Manager).filter(collumn_filter.ilike(f"%{input_filter}%")).all()
+            for el in filter_entry:
+                print(f"{el.id}. Association: {el.website}; Login details: {el.username}; Password {el.enc_password}")
+            break
+
+filter_sql()
