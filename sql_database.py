@@ -32,7 +32,11 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 
-def create_sql_entry():
+def create_sql_entry() -> None:
+    """
+    Function takes user input of data that is to be added to sql database and creates new entrt
+    :return: None. Creates new entry in sql database
+    """
     while True:
         input_website = input("Website password is associated with: ")
         input_username = input("Username used: ")
@@ -53,14 +57,22 @@ def create_sql_entry():
             print("\nPlease select correct value - Y or N\n")
 
 
-def view_sql():
+def view_sql() -> None:
+    """
+    Function prints out all entries containing sql database except for entry creation date
+    :return: None. Function prints out results
+    """
     view_data = session.query(Password_Manager).all()
     for el in view_data:
         decrypted_password = fernet_decryption(el.enc_password)
         print(f"{el.id}. Association: {el.website}; Login details: {el.username}; Password: {decrypted_password}")
 
 
-def delete_sql_entry():
+def delete_sql_entry() -> None:
+    """
+    Function deletes selected entry in sql database based on users input of ID
+    :return: None. Function deletes entry in sql database
+    """
     while True:
         try:
             entry_id = int(input("Select password ID corresponding to which entry should be deleted: "))
@@ -75,7 +87,11 @@ def delete_sql_entry():
             print("\nID must be a digit\n")
 
 
-def filter_sql():
+def filter_sql() -> None:
+    """
+    Looped menu of functions described above. Based on user entry, function calls other functions
+    :return: None
+    """
     while True:
         option_filter = input("Please select according to which column you want to filter:\n"
                               "1. Entry ID\n"
@@ -101,8 +117,3 @@ def filter_sql():
                 print(
                     f"{el.id}. Association: {el.website}; Login details: {el.username}; Password {decrypted_password}")
             break
-
-
-view_data = session.query(Password_Manager).all()
-for el in view_data:
-    print(el.enc_password)

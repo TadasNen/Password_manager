@@ -3,7 +3,11 @@ from string import ascii_lowercase, ascii_uppercase, punctuation
 import pyperclip
 
 
-def user_input_options():
+def user_input_options() -> str:
+    """
+    Function takes users input of which options newly generated password should contain
+    :return: String of options in digits
+    """
     while True:
         psw_options = input("\nPlease select option that password will contain:\n"
                             "1. Lowercase letters\n"
@@ -25,7 +29,11 @@ def user_input_options():
             print("\nPlease use digits 1-4 separated by space as options\n")
 
 
-def user_input_length():
+def user_input_length() -> str:
+    """
+    Function used for user to input desired password length
+    :return: String of digits which contains password length
+    """
     while True:
         psw_lenth = input("\nPlease select password length (min. 4 characters): ")
         try:
@@ -37,7 +45,13 @@ def user_input_length():
             print("Please use digits for password length")
 
 
-def password_generation():
+def password_generation() -> str:
+    """
+    Function generates new password based on user inputs in previously defined functions.
+    Additional lines were added to foolproof password generation that it always contains selected option at least once.
+    Additional lines added to automatically copy result to clipboard
+    :return: String of generated password
+    """
     symbol_cache = []
     psw_length = user_input_length()
     psw_options = user_input_options()
