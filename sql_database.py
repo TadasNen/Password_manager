@@ -35,12 +35,14 @@ def create_sql_entry():
         password_query = input("Do you want to generate new password? [Y/N]: ")
         if password_query.lower() == "n":
             input_password = input("Please state your associated password: ")
-            session.add(Password_Manager(input_website, input_username, input_password))
+            encrypted_password = fernet_encryption(input_password)
+            session.add(Password_Manager(input_website, input_username, encrypted_password))
             session.commit()
             break
         elif password_query.lower() == "y":
             input_password = password_generation()
-            session.add(Password_Manager(input_website, input_username, input_password))
+            encrypted_password = fernet_encryption(input_password)
+            session.add(Password_Manager(input_website, input_username, encrypted_password))
             session.commit()
             break
         else:
@@ -49,7 +51,8 @@ def create_sql_entry():
 def view_sql():
     view_data = session.query(Password_Manager).all()
     for el in view_data:
-        print(f"{el.id}. Association: {el.website}; Login details: {el.username}; Password: {el.enc_password}")
+        decrypted_password = fernet_decryption(el.enc_password)
+        print(f"{el.id}. Association: {el.website}; Login details: {el.username}; Password: {decrypted_password}")
 
 def delete_sql_entry():
     while True:
@@ -87,5 +90,8 @@ def filter_sql():
             input_filter = input("Search for: ")
             filter_entry = session.query(Password_Manager).filter(collumn_filter.ilike(f"%{input_filter}%")).all()
             for el in filter_entry:
-                print(f"{el.id}. Association: {el.website}; Login details: {el.username}; Password {el.enc_password}")
+                decrypted_password = fernet_decryption(el.enc_password)
+                print(f"{el.id}. Association: {el.website}; Login details: {el.username}; Password {decrypted_password}")
             break
+
+create_sql_entry()

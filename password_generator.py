@@ -3,7 +3,7 @@ from string import ascii_lowercase, ascii_uppercase, punctuation
 
 def user_input_options():
     while True:
-        psw_options = input("Please select option that password will contain:\n"
+        psw_options = input("\nPlease select option that password will contain:\n"
                             "1. Lowercase letters\n"
                             "2. Uppercase letters\n"
                             "3. Digits\n"
@@ -24,7 +24,7 @@ def user_input_options():
 
 def user_input_length():
     while True:
-        psw_lenth = input("Please select password length (min. 4 characters): ")
+        psw_lenth = input("\nPlease select password length (min. 4 characters): ")
         try:
             if int(psw_lenth) > 3:
                 return psw_lenth
