@@ -3,6 +3,8 @@
 3. Data saving into sql database ========== DONE!
 4. Unique user accounts to access your passwords with unique encryption key --------- FOR LATER
 5. GUI ------- FOR LATER
-6. requirements file
+6. requirements file ======== DONE!
 7. GitHub ========== DONE!
 8. Exe file
+9. Make automatic clipboard copy of generated password ======== DONE!!!
+10. Full annotations

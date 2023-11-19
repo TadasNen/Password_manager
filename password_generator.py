@@ -1,5 +1,6 @@
 import random
 from string import ascii_lowercase, ascii_uppercase, punctuation
+import pyperclip
 
 
 def user_input_options():
@@ -60,4 +61,6 @@ def password_generation():
     while len(password) < int(psw_length):
         password.append(random.choice(symbol_cache))
     shuffled_password = sorted(password, key=lambda k: random.random())
-    return "".join(map(str, shuffled_password))
+    created_password = "".join(map(str, shuffled_password))
+    pyperclip.copy(created_password)
+    return created_password
