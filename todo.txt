@@ -1,8 +1,8 @@
 1. Password generation ========== DONE!
 2. Encryption ========== DONE!
 3. Data saving into sql database ========== DONE!
-4. Account to access your passwords with unique encryption key
-5. GUI
+4. Unique user accounts to access your passwords with unique encryption key --------- FOR LATER
+5. GUI ------- FOR LATER
 6. requirements file
 7. GitHub ========== DONE!
 8. Exe file

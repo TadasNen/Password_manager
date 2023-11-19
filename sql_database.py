@@ -6,10 +6,12 @@ from password_generator import password_generation
 from encyption import *
 
 from sqlalchemy.util import deprecations
+
 deprecations.SILENCE_UBER_WARNING = True
 
 engine = create_engine("sqlite:///password_manager.db")
 Base = declarative_base()
+
 
 class Password_Manager(Base):
     __tablename__ = "Saved passwords"
@@ -24,9 +26,11 @@ class Password_Manager(Base):
         self.username = username
         self.enc_password = enc_password
 
+
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
+
 
 def create_sql_entry():
     while True:
@@ -48,11 +52,13 @@ def create_sql_entry():
         else:
             print("\nPlease select correct value - Y or N\n")
 
+
 def view_sql():
     view_data = session.query(Password_Manager).all()
     for el in view_data:
         decrypted_password = fernet_decryption(el.enc_password)
         print(f"{el.id}. Association: {el.website}; Login details: {el.username}; Password: {decrypted_password}")
+
 
 def delete_sql_entry():
     while True:
@@ -68,14 +74,15 @@ def delete_sql_entry():
         except ValueError:
             print("\nID must be a digit\n")
 
+
 def filter_sql():
     while True:
         option_filter = input("Please select according to which column you want to filter:\n"
-                             "1. Entry ID\n"
-                             "2. Associated website\n"
-                             "3. Login details\n"
-                             "q - quit\n"
-                             "Your option: ")
+                              "1. Entry ID\n"
+                              "2. Associated website\n"
+                              "3. Login details\n"
+                              "q - quit\n"
+                              "Your option: ")
         if option_filter == "1":
             collumn_filter = Password_Manager.id
         elif option_filter == "2":
@@ -91,8 +98,10 @@ def filter_sql():
             filter_entry = session.query(Password_Manager).filter(collumn_filter.ilike(f"%{input_filter}%")).all()
             for el in filter_entry:
                 decrypted_password = fernet_decryption(el.enc_password)
-                print(f"{el.id}. Association: {el.website}; Login details: {el.username}; Password {decrypted_password}")
+                print(
+                    f"{el.id}. Association: {el.website}; Login details: {el.username}; Password {decrypted_password}")
             break
+
 
 view_data = session.query(Password_Manager).all()
 for el in view_data:

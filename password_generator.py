@@ -1,6 +1,7 @@
 import random
 from string import ascii_lowercase, ascii_uppercase, punctuation
 
+
 def user_input_options():
     while True:
         psw_options = input("\nPlease select option that password will contain:\n"
@@ -22,6 +23,7 @@ def user_input_options():
         except:
             print("\nPlease use digits 1-4 separated by space as options\n")
 
+
 def user_input_length():
     while True:
         psw_lenth = input("\nPlease select password length (min. 4 characters): ")
@@ -32,6 +34,7 @@ def user_input_length():
                 print("Password length is incorrect")
         except ValueError:
             print("Please use digits for password length")
+
 
 def password_generation():
     symbol_cache = []
