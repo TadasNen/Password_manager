@@ -112,8 +112,12 @@ def filter_sql() -> None:
         if option_filter == "1" or option_filter == "2" or option_filter == "3":
             input_filter = input("Search for: ")
             filter_entry = session.query(Password_Manager).filter(collumn_filter.ilike(f"%{input_filter}%")).all()
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+            print("Your search results: ")
             for el in filter_entry:
                 decrypted_password = fernet_decryption(el.enc_password)
-                print(
-                    f"{el.id}. Association: {el.website}; Login details: {el.username}; Password {decrypted_password}")
+                print(f"{el.id}. "
+                      f"Association: {el.website}; "
+                      f"Login details: {el.username}; "
+                      f"Password {decrypted_password}")
             break
