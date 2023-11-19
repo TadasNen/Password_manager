@@ -137,13 +137,17 @@
    'C:\\Users\\nenis\\PycharmProjects\\Password '
    'manager\\build\\main\\base_library.zip',
    'DATA'),
+  ('cryptography-41.0.5.dist-info\\INSTALLER',
+   'C:\\Users\\nenis\\PycharmProjects\\Password '
+   'manager\\venv\\lib\\site-packages\\cryptography-41.0.5.dist-info\\INSTALLER',
+   'DATA'),
+  ('cryptography-41.0.5.dist-info\\LICENSE',
+   'C:\\Users\\nenis\\PycharmProjects\\Password '
+   'manager\\venv\\lib\\site-packages\\cryptography-41.0.5.dist-info\\LICENSE',
+   'DATA'),
   ('cryptography-41.0.5.dist-info\\METADATA',
    'C:\\Users\\nenis\\PycharmProjects\\Password '
    'manager\\venv\\lib\\site-packages\\cryptography-41.0.5.dist-info\\METADATA',
-   'DATA'),
-  ('cryptography-41.0.5.dist-info\\WHEEL',
-   'C:\\Users\\nenis\\PycharmProjects\\Password '
-   'manager\\venv\\lib\\site-packages\\cryptography-41.0.5.dist-info\\WHEEL',
    'DATA'),
   ('cryptography-41.0.5.dist-info\\LICENSE.BSD',
    'C:\\Users\\nenis\\PycharmProjects\\Password '
@@ -153,13 +157,9 @@
    'C:\\Users\\nenis\\PycharmProjects\\Password '
    'manager\\venv\\lib\\site-packages\\cryptography-41.0.5.dist-info\\RECORD',
    'DATA'),
-  ('cryptography-41.0.5.dist-info\\LICENSE',
+  ('cryptography-41.0.5.dist-info\\LICENSE.APACHE',
    'C:\\Users\\nenis\\PycharmProjects\\Password '
-   'manager\\venv\\lib\\site-packages\\cryptography-41.0.5.dist-info\\LICENSE',
-   'DATA'),
-  ('cryptography-41.0.5.dist-info\\INSTALLER',
-   'C:\\Users\\nenis\\PycharmProjects\\Password '
-   'manager\\venv\\lib\\site-packages\\cryptography-41.0.5.dist-info\\INSTALLER',
+   'manager\\venv\\lib\\site-packages\\cryptography-41.0.5.dist-info\\LICENSE.APACHE',
    'DATA'),
   ('cryptography-41.0.5.dist-info\\REQUESTED',
    'C:\\Users\\nenis\\PycharmProjects\\Password '
@@ -169,9 +169,9 @@
    'C:\\Users\\nenis\\PycharmProjects\\Password '
    'manager\\venv\\lib\\site-packages\\cryptography-41.0.5.dist-info\\top_level.txt',
    'DATA'),
-  ('cryptography-41.0.5.dist-info\\LICENSE.APACHE',
+  ('cryptography-41.0.5.dist-info\\WHEEL',
    'C:\\Users\\nenis\\PycharmProjects\\Password '
-   'manager\\venv\\lib\\site-packages\\cryptography-41.0.5.dist-info\\LICENSE.APACHE',
+   'manager\\venv\\lib\\site-packages\\cryptography-41.0.5.dist-info\\WHEEL',
    'DATA')],
  'python310.dll',
  False,
