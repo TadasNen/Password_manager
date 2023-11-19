@@ -4,6 +4,8 @@ print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 print("Welcome to password manager app")
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
 
+generate_key()
+
 while True:
     menu_options = input("Please select what would you like to do:\n"
                          "1. Generate new password\n"

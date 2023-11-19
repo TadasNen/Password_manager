@@ -94,4 +94,6 @@ def filter_sql():
                 print(f"{el.id}. Association: {el.website}; Login details: {el.username}; Password {decrypted_password}")
             break
 
-create_sql_entry()
+view_data = session.query(Password_Manager).all()
+for el in view_data:
+    print(el.enc_password)
