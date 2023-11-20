@@ -5,6 +5,6 @@
 5. GUI ------- FOR LATER
 6. requirements file ======== DONE!
 7. GitHub ========== DONE!
-8. Exe file
+8. Exe file ========== DONE!
 9. Make automatic clipboard copy of generated password ======== DONE!!!
 10. Full annotations ======== DONE!

@@ -61,17 +61,17 @@ def password_generation() -> str:
             symbol_cache.append(el)
         password.append(random.choice(ascii_lowercase))
     if "2" in psw_options:
+        password.append(random.choice(ascii_uppercase))
         for el in ascii_uppercase:
             symbol_cache.append(el)
-        password.append(random.choice(ascii_uppercase))
     if "3" in psw_options:
+        password.append(random.choice(range(9)))
         for el in range(9):
             symbol_cache.append(el)
-        password.append(random.choice(range(9)))
     if "4" in psw_options:
+        password.append(random.choice(punctuation))
         for el in punctuation:
             symbol_cache.append(el)
-        password.append(random.choice(punctuation))
     while len(password) < int(psw_length):
         password.append(random.choice(symbol_cache))
     shuffled_password = sorted(password, key=lambda k: random.random())
