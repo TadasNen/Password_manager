@@ -37,7 +37,7 @@ def user_input_length() -> str:
     while True:
         psw_lenth = input("\nPlease select password length (min. 4 characters): ")
         try:
-            if int(psw_lenth) > 3:
+            if int(psw_lenth) > 4:
                 return psw_lenth
             else:
                 print("Password length is incorrect")
